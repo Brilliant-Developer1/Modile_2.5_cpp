@@ -71,13 +71,12 @@ int main()
     {
         cin >> array[i];
     }
+
     int maxdigit = 0;
     for (int i = 0; i < input; i++)
     {
-        // cout << array[i] ;
         maxdigit = max(maxdigit, array[i]);
     }
-
     cout << maxdigit;
 
     return 0;

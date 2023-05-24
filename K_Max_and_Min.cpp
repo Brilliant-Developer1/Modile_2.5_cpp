@@ -58,32 +58,23 @@
 #include <valarray>
 #include <vector>
 
-#include <stdio.h>
-
 using namespace std;
 
 int main()
 {
-    char input;
-    cin >> input;
 
-    if (isdigit(input))
-    {
-        cout << "IS DIGIT";
-    }
-    else
-    {
-        if (isupper(input))
-        {
-            cout << "ALPHA" << endl
-                 << "IS CAPITAL";
-        }
-        else
-        {
-            cout << "ALPHA" << endl
-                 << "IS SMALL";
-        }
-    }
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    // cout << a << b << c;
+
+    int minimum = INT_MAX;
+    int maximum = INT_MIN;
+
+    minimum = min(minimum, min(a, min(b, c)));
+    maximum = max(maximum, max(a, max(b, c)));
+
+    cout << minimum << " " << maximum;
 
     return 0;
 }

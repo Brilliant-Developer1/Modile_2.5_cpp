@@ -58,32 +58,34 @@
 #include <valarray>
 #include <vector>
 
-#include <stdio.h>
-
 using namespace std;
 
 int main()
 {
-    char input;
+
+    int input;
     cin >> input;
 
-    if (isdigit(input))
+    int array[input];
+    for (int i = 0; i < input; i++)
     {
-        cout << "IS DIGIT";
+        cin >> array[i];
     }
-    else
+
+    for (int i = 0; i < input; i++)
     {
-        if (isupper(input))
+        for (int j = i + 1; j < input; j++)
         {
-            cout << "ALPHA" << endl
-                 << "IS CAPITAL";
-        }
-        else
-        {
-            cout << "ALPHA" << endl
-                 << "IS SMALL";
+            if (array[j] < array[i])
+            {
+                swap(array[j], array[i]);
+            }
         }
     }
 
+    for (int i = 0; i < input; i++)
+    {
+        cout << array[i] << " ";
+    }
     return 0;
 }
